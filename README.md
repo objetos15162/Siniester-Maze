@@ -12,4 +12,4 @@ This project is a horror video game.
 Based on a simple story with famous horror 
 characters in the film history.
 Here all the programming performed is shown for 
-this project by [bradeduard](https://github.com/bradeduard) y [AnaCovaz](https://github.com/AnaCovaz) .
+this project by [bradeduard](https://github.com/bradeduard) and [AnaCovaz](https://github.com/AnaCovaz) .
