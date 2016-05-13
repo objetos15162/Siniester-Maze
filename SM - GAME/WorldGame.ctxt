@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=WorldGame
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WorldGame\ here.\r\n\ \r\n\ @author\ Anabel\ Covarrubias\ \ \r\n\ @version\ Betha\ 1.4\r\n
+comment1.params=
+comment1.target=WorldGame()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ addName()
+comment2.text=\r\n\ Method\ for\ see\ the\ name\ in\ the\ window\ of\ the\ video\ game.\ \r\n
+numComments=3
