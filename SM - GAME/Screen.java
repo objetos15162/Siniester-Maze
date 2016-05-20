@@ -30,7 +30,11 @@ public class Screen extends World
         ToBack buttonback = new ToBack();
         addObject(buttonback,764,626);
     }
-      
+    
+    /**
+     * This method check the option to show for example the Screen Help,
+     * the Screen Credits, the Screen Lost and the Screen Win.
+     */
     private void checkOption(int value)
     {
         if(value == 0)
@@ -47,6 +51,11 @@ public class Screen extends World
         {
             setBackground("SM - LOST.png");
             Greenfoot.playSound("SM - Lose.wav");
-        }   
+        }
+        
+        if(value == 3)
+        {
+            setBackground("SM - WIN.png");
+        }
     }
 }

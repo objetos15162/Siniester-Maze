@@ -20,6 +20,9 @@ public class Enemy extends Actor
         moveEnemy();
     }    
     
+    /**
+     * This metod makes a enemy move.
+     */
     private void moveEnemy()
     {
         
@@ -69,6 +72,9 @@ public class Enemy extends Actor
         }  
     }
      
+    /**
+     * This method initialize a value random to set a direction random.
+     */
     public void setMoveAux(int value)
     {
         moveAux = value;

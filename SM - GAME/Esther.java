@@ -10,6 +10,10 @@ public class Esther extends Enemy
 {
     private Knife knife;
     
+    /**
+     * Constructor for objects of class Esther. This access to super class to get a random 
+     * direction to this enemy and initialize a object of Knife type to be throw for Esther.
+     */
     public Esther()
     {
         knife = new Knife();

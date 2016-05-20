@@ -9,4 +9,5 @@ comment2.target=void\ prepare()
 comment2.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
 comment3.params=value
 comment3.target=void\ checkOption(int)
+comment3.text=\r\n\ This\ method\ check\ the\ option\ to\ show\ for\ example\ the\ Screen\ Help,\r\n\ the\ Screen\ Credits,\ the\ Screen\ Lost\ and\ the\ Screen\ Win.\r\n
 numComments=4

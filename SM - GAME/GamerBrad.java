@@ -20,8 +20,12 @@ public class GamerBrad extends Actor
     private int actualTime;
     private int afterTime;
     
+    /**
+     * Constructor for objects of class Brad.
+     */
     public GamerBrad()
     {
+       
        key=0;
        keySpecial=0;
        clue=0;
@@ -37,7 +41,7 @@ public class GamerBrad extends Actor
     
     /**
      * Act - do whatever the GamerBrad wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * This method to move a GamerBrad and check if a item or enemy is touching him.
      */
     public void act() 
     {
@@ -53,11 +57,16 @@ public class GamerBrad extends Actor
         }
     }
     
+    /**
+     * This method makes to move a GamerBrad in two ways, if it is paralized or it is unparalized.
+     */
     public void moveBrad()
     {
         Actor aBloc;
+        
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
+        
         if(paralize == false)
         {
             
@@ -115,16 +124,26 @@ public class GamerBrad extends Actor
         }
     }
     
+    /**
+     * This method check if a item is near of GamerBrad and if a item is touching him.
+     */
     public void checkItem()
     {
+        World mundo = getWorld();
+        Maze myWorld = (Maze)mundo;
+        
         if(isTouching(Key.class) && Greenfoot.isKeyDown("h"))
         {
             key++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(Key.class);
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
             myWorld.getKeys().setValue(key);
+            
+            if(key > 5 && keySpecial > 1)
+            {
+                Screen iWinner = new Screen(3);
+                Greenfoot.setWorld(iWinner);
+            }
         }
         
         if(isTouching(Adrenalin.class) && Greenfoot.isKeyDown("j"))
@@ -139,8 +158,6 @@ public class GamerBrad extends Actor
             clue++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(Clue.class);
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
             myWorld.getClues().setValue(clue);
         }
         
@@ -162,63 +179,62 @@ public class GamerBrad extends Actor
         {
             life--;
             removeTouching(Knife.class);
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setLife();
         }
     }
     
+    /**
+     * This method check if a enemy is near of GamerBrad and if a enemy is touching him.
+     */
     private void checkEnemyNearby()
     {
-        if(isTouching(Saw.class))
+        World mundo = getWorld();
+        Maze myWorld = (Maze)mundo;
+        
+        if(isTouching(Saw.class) || isTouching(Esther.class) )
         {
             life--;
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setLife();
         }
-        if(isTouching(Esther.class))
-        {
-            life--; //The knifes will kill you;
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setLife();
-        }
+        
         if(isTouching(Ben.class))
         {
             adrenalin--; //The fire that he trows will kill you;
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setAdrenalin();
         }
+        
         if(isTouching(Billy.class))
         {
             oxigen--;
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setOxigen();
         }
+        
         if(isTouching(Nurse.class))
         {
-            life--; 
-            World mundo = getWorld();
-            Maze myWorld = (Maze)mundo;
-            myWorld.setLife();
+            life--;
             paralize=true;
             actualTime=myWorld.getActualTime();
         }
     }
     
+    /**
+     * This method return a int that represent the life of GamerBrad.
+     * @return a int that represent the life.
+     */
     public int getLife()
     {
         return life;
     }
     
+    /**
+     * This method return a int that represent the adrenalin of GamerBrad.
+     * @return a int that represent the adrenalin.
+     */
     public int getAdrenalin()
     {
         return adrenalin;
     }
     
+    /**
+     * This method return a int that represent the oxigen of GamerBrad.
+     * @return a int that represent the oxigen.
+     */
     public int getOxigen()
     {
         return oxigen;

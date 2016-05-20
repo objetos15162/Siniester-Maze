@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ToBack extends Button
 {
     /**
-     * Act - do whatever the Back wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *This method is a button to go to a Start for choose a option in the game.
      */
     public void act() 
     {

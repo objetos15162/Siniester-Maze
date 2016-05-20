@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ben extends Enemy
 {
+    /**
+     * Constructor for objects of class Ben. This access to super class to get a random 
+     * direction to this enemy.
+     */
     public Ben()
     {
         super.setMoveAux(Greenfoot.getRandomNumber(4));

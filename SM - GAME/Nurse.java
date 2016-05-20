@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Nurse extends Enemy
 {
+    /**
+     * Constructor for objects of class Nurse. This access to super class to get a random 
+     * direction to this enemy.
+     */
     public Nurse()
     {
         super.setMoveAux(Greenfoot.getRandomNumber(4));
@@ -16,6 +20,7 @@ public class Nurse extends Enemy
     /**
      * Act - do whatever the Nurse wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * This method check the objects of type GamerBrad are around of this enemy to make it move.
      */
     public void act() 
     {

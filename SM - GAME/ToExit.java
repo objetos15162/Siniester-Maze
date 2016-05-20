@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ToExit extends Button
 {
     /**
-     * Act - do whatever the ToExit wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *This method is a button to go to a Screen with the information of finish game.
      */
     public void act() 
     {

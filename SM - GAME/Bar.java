@@ -10,7 +10,7 @@ public class Bar extends Actor
 {
     /**
      * Act - do whatever the Bar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * This method do nothing, just is a class to agroup the bars to GamerBrad
      */
     public void act() 
     {

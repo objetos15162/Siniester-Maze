@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ToPlay extends Button
 {
     /**
-     * Act - do whatever the ToPlay wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *This method is a button to go to Maze.
      */
     public void act() 
     {

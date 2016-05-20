@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class ToCredit extends Button
 {
     /**
-     * Act - do whatever the ToCredit wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *This method is a button to go to a Screen with the Credits of the game.
      */
     public void act() 
     {
