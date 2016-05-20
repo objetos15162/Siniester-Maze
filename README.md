@@ -1,15 +1,19 @@
 # Sinister Maze
 
-Este proyecto es un videojuego de terror. 
-Basado en una historia sencilla con personajes 
-de terror famosos en la historia del cine.
-Aquí se muestra toda la programación realizada 
+Esto se basa en los personajes más famosos de las películas de terror de los videojuegos.
+En este juego se puede encontrar de todo, desde simples estrategias hasta poner a prueba tu capacidad mental para descubrir cómo salir del laberinto. 
+Entre los personajes son de Saw , Ben , Esther , la enfermera de silent hill y marioneta Billy .
+Tu tendras que ser capaz de utilizar tus sentidos para pasar las pruebas .
+Recuerde que no sólo la vida de Brad está en peligro sino también la de su amigo.
+¿Será capaz de salvar dos vidas en una sola noche ? Empecemos el juego.
 para este proyecto por [bradeduard](https://github.com/bradeduard) y [AnaCovaz](https://github.com/AnaCovaz) .
 
 # Sinester Maze
 
-This project is a horror video game.
-Based on a simple story with famous horror 
-characters in the film history.
-Here all the programming performed is shown for 
+This is based on the most famous characters from horror movies video games.
+In this game you can find everything from simple strategies to test your mental ability to discover how to get out of the maze.
+Among the characters are Saw , Ben , Esther , silent hill nurse and Billy puppet .
+You will have to be able to use your senses to pass the tests .
+Remember that not only Brad's life is in danger but also that of his friend .
+Will you be able to save two lives in one night? Start the game.
 this project by [bradeduard](https://github.com/bradeduard) and [AnaCovaz](https://github.com/AnaCovaz) .
