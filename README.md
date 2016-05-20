@@ -6,7 +6,7 @@ Entre los personajes son de Saw , Ben , Esther , la enfermera de silent hill y m
 Tu tendras que ser capaz de utilizar tus sentidos para pasar las pruebas .
 Recuerde que no sólo la vida de Brad está en peligro sino también la de su amigo.
 ¿Será capaz de salvar dos vidas en una sola noche ? Empecemos el juego.
-para este proyecto por [bradeduard](https://github.com/bradeduard) y [AnaCovaz](https://github.com/AnaCovaz) .
+Este proyecto fue creado por [bradeduard](https://github.com/bradeduard) y [AnaCovaz](https://github.com/AnaCovaz) .
 
 # Sinester Maze
 
@@ -16,4 +16,4 @@ Among the characters are Saw , Ben , Esther , silent hill nurse and Billy puppet
 You will have to be able to use your senses to pass the tests .
 Remember that not only Brad's life is in danger but also that of his friend .
 Will you be able to save two lives in one night? Start the game.
-this project by [bradeduard](https://github.com/bradeduard) and [AnaCovaz](https://github.com/AnaCovaz) .
+This project was created by [bradeduard](https://github.com/bradeduard) and [AnaCovaz](https://github.com/AnaCovaz) .
