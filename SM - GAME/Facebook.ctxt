@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Facebook
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Facebook\ here.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
+comment0.text=\r\n\ This\ is\ a\ class\ to\ represent\ the\ Facebook\ button.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Facebook\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ Check\ the\ clic\ and\ generate\ a\ Screen.\r\n
 numComments=2

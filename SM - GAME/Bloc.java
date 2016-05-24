@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bloc here.
+ * This is a class to represent the Bloc.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0

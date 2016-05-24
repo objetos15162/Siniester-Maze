@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Esther here.
+ * This is a class to represent the Esther.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0
@@ -9,7 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Esther extends Enemy
 {
     private Knife knife;
-
+    
+    /**
+     * This is the constructor of the class.
+     */
     public Esther()
     {
         knife = new Knife();

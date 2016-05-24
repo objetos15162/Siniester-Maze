@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BLife here.
+ * This is a class to represent the Bar Life.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0

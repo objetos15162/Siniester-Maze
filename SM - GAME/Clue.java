@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Clue here.
+ * This is a class to represent the clues.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0
@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Clue extends Item
 {
     /**
-     * Act - do whatever the Clue wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * No act.
      */
     public void act() 
     {

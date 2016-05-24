@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=BAdrenalin
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BAdrenalin\ here.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
+comment0.text=\r\n\ This\ is\ a\ class\ to\ represent\ the\ Bar\ Adrenalin.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ BAdrenalin\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

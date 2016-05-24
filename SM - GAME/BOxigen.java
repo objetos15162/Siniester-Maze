@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class BOxigen here.
+ * This is a class to represent the Bar Oxigen.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0

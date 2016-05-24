@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cassette here.
+ * This is a class to represent the Cassette.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0
@@ -9,8 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Cassette extends Item
 {
     /**
-     * Act - do whatever the Cassette wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     *No act.
      */
     public void act() 
     {

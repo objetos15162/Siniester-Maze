@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GamerBrad here.
+ * This is a class to represent the Brad.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0
@@ -20,6 +20,9 @@ public class GamerBrad extends Actor
     private int actualTime;
     private int afterTime;
 
+    /**
+     * This is the constructor of the class.
+     */
     public GamerBrad()
     {
         key=0;
@@ -61,6 +64,9 @@ public class GamerBrad extends Actor
         }
     }
 
+    /**
+     * Method to move a Brad.
+     */
     public void moveBrad()
     {
         Actor aBloc;
@@ -94,7 +100,11 @@ public class GamerBrad extends Actor
                 {
                     move(-3);
                 }
-                //Greenfoot.playSound("SM - Breathing.wav");
+                bBloc = getOneIntersectingObject(Door.class);
+                if(bBloc!=null)
+                {
+                    move(-3);
+                }
             }
 
             if(Greenfoot.isKeyDown("s"))
@@ -105,7 +115,6 @@ public class GamerBrad extends Actor
                 {
                     setLocation(getX(),getY()-3);
                 }
-                //Greenfoot.playSound("SM - Breathing.wav");
             }
 
             if(Greenfoot.isKeyDown("w"))
@@ -116,7 +125,6 @@ public class GamerBrad extends Actor
                 {
                     setLocation(getX(),getY()+3);
                 }
-                //Greenfoot.playSound("SM - Breathing.wav");
             }
         }
         else
@@ -129,6 +137,9 @@ public class GamerBrad extends Actor
         }
     }
 
+    /**
+     * Method to check the touching item.
+     */
     public void checkItem()
     {
         World mundo = getWorld();
@@ -166,7 +177,7 @@ public class GamerBrad extends Actor
             myWorld.showExits();
         }
 
-        if(isTouching(Cassette.class) && Greenfoot.isKeyDown("u"))
+        if(isTouching(Cassette.class) && Greenfoot.isKeyDown("i"))
         {
             cassette++;
             Greenfoot.playSound("SM - Item.wav");
@@ -182,6 +193,9 @@ public class GamerBrad extends Actor
         }
     }
 
+    /**
+     * This is a method to check the touching Enemy.
+     */
     private void checkEnemyNearby()
     {
         World mundo = getWorld();
@@ -212,6 +226,9 @@ public class GamerBrad extends Actor
         }
     }
 
+    /**
+     * This method is to check the touching Exits and teleport to next level.
+     */
     public void checkExit()
     {
         World mundo = getWorld();
@@ -244,26 +261,41 @@ public class GamerBrad extends Actor
         }
     }
 
+    /**
+     * This method remove the doors.
+     */
     private void removeDoor()
     {
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
-        if((keySpecial==3) && Greenfoot.isKeyDown("o"))
+        if((keySpecial==3) && Greenfoot.isKeyDown("i"))
         {
             myWorld.removeObjects(myWorld.getObjects(Door.class));
         }
     }
 
+    /**
+     * Methor to get the Brad life.
+     * @return The life of Brad.
+     */
     public int getLife()
     {
         return life;
     }
 
+     /**
+     * Methor to get the Brad adrenalin.
+     * @return The adrenalin of Brad.
+     */
     public int getAdrenalin()
     {
         return adrenalin;
     }
 
+     /**
+     * Methor to get the Brad oxigen.
+     * @return The oxigen of Brad.
+     */
     public int getOxigen()
     {
         return oxigen;
@@ -286,55 +318,21 @@ public class GamerBrad extends Actor
 
     private void playCassette()
     {
-        try {
-            if(cassette==1)
-            {
-                try {
-                    Greenfoot.playSound("SM-Maze-A.wav");
-                }
-
-                catch(IllegalArgumentException e)
-                {
-                    System.out.println("La cache");
-                }
-            }
-            else if (cassette==2)
-            {
-                try {
-                    Greenfoot.playSound("SM-Maze-B.wav");
-                }
-
-                catch(IllegalArgumentException e)
-                {
-                    System.out.println("La cache");
-                }
-            }
-            else if (cassette==3)
-            {
-                try {
-                    Greenfoot.playSound("SM-Maze-C.wav");
-                }
-
-                catch(IllegalArgumentException e)
-                {
-                    System.out.println("La cache");
-                }
-            }
-            else
-            {
-                try {
-                    Greenfoot.playSound("SM-Maze-D.wav");
-                }
-
-                catch(IllegalArgumentException e)
-                {
-                    System.out.println("La cache");
-                }
-            }
-        }
-        catch(ArrayIndexOutOfBoundsException e)
+        if(cassette==1)
         {
-
+            Greenfoot.playSound("SM - Maze A.wav");
+        }
+        else if (cassette==2)
+        {
+            Greenfoot.playSound("SM - Maze B.wav");
+        }
+        else if (cassette==3)
+        {
+            Greenfoot.playSound("SM - Maze C.wav");
+        }
+        else
+        {
+            Greenfoot.playSound("SM - Maze D.wav");
         }
     }
 

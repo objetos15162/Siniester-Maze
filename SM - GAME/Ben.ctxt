@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=Ben
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ben\ here.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
+comment0.text=\r\n\ This\ is\ a\ class\ to\ represent\ the\ Ben.\r\n\ \r\n\ @author\ Corpus\ Sanchez\ Jose\ Eduardo\ \r\n\ @version\ 2.0\r\n
 comment1.params=
 comment1.target=Ben()
+comment1.text=\r\n\ This\ is\ the\ constructor\ of\ the\ class.\r\n
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Ben\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n

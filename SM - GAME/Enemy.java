@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Enemy here.
+ * This is a class to represent the Enemy.
  * 
  * @author Corpus Sanchez Jose Eduardo 
  * @version 2.0
@@ -20,6 +20,9 @@ public class Enemy extends Actor
         moveEnemy();
     }    
 
+    /**
+     * Method to move random the enemy.
+     */
     private void moveEnemy()
     {
 
@@ -69,6 +72,10 @@ public class Enemy extends Actor
         }  
     }
 
+    /**
+     * Method to generate the variable move in a random value.
+     * @param value A random value.
+     */
     public void setMoveAux(int value)
     {
         moveAux = value;
