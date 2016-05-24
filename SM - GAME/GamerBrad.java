@@ -19,29 +19,25 @@ public class GamerBrad extends Actor
     private boolean paralize;
     private int actualTime;
     private int afterTime;
-    
-    /**
-     * Constructor for objects of class Brad.
-     */
+
     public GamerBrad()
     {
-       
-       key=0;
-       keySpecial=0;
-       clue=0;
-       box=0;
-       cassette=0;
-       life=100;
-       adrenalin=100;
-       oxigen=100;
-       paralize=false;
-       actualTime=0;
-       afterTime=0;
+        key=0;
+        keySpecial=0;
+        clue=0;
+        box=0;
+        cassette=0;
+        life=100;
+        adrenalin=100;
+        oxigen=100;
+        paralize=false;
+        actualTime=0;
+        afterTime=0;
     }
-    
+
     /**
      * Act - do whatever the GamerBrad wants to do. This method is called whenever
-     * This method to move a GamerBrad and check if a item or enemy is touching him.
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
@@ -55,21 +51,26 @@ public class GamerBrad extends Actor
         {
             checkEnemyNearby();
         }
+        if(isTouching(Exit.class))
+        {
+            checkExit();
+        }
+        if((keySpecial%3)==0)
+        {
+            removeDoor();
+        }
     }
-    
-    /**
-     * This method makes to move a GamerBrad in two ways, if it is paralized or it is unparalized.
-     */
+
     public void moveBrad()
     {
         Actor aBloc;
-        
+        Actor bBloc;
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
-        
+
         if(paralize == false)
         {
-            
+
             if(Greenfoot.isKeyDown("a"))
             {
                 move(-3);
@@ -78,9 +79,13 @@ public class GamerBrad extends Actor
                 {
                     move(3);
                 }
-                //Greenfoot.playSound("SM - Breathing.wav");
+                bBloc = getOneIntersectingObject(Door.class);
+                if(bBloc!=null)
+                {
+                    move(3);
+                }
             }
-            
+
             if(Greenfoot.isKeyDown("d"))
             {
                 move(3);
@@ -91,7 +96,7 @@ public class GamerBrad extends Actor
                 }
                 //Greenfoot.playSound("SM - Breathing.wav");
             }
-            
+
             if(Greenfoot.isKeyDown("s"))
             {
                 setLocation(getX(),getY()+3);
@@ -102,7 +107,7 @@ public class GamerBrad extends Actor
                 }
                 //Greenfoot.playSound("SM - Breathing.wav");
             }
-            
+
             if(Greenfoot.isKeyDown("w"))
             {
                 setLocation(getX(),getY()-3);
@@ -123,36 +128,27 @@ public class GamerBrad extends Actor
             }
         }
     }
-    
-    /**
-     * This method check if a item is near of GamerBrad and if a item is touching him.
-     */
+
     public void checkItem()
     {
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
-        
+
         if(isTouching(Key.class) && Greenfoot.isKeyDown("h"))
         {
             key++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(Key.class);
             myWorld.getKeys().setValue(key);
-            
-            if(key > 5 && keySpecial > 1)
-            {
-                Screen iWinner = new Screen(3);
-                Greenfoot.setWorld(iWinner);
-            }
         }
-        
+
         if(isTouching(Adrenalin.class) && Greenfoot.isKeyDown("j"))
         {
             adrenalin++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(Adrenalin.class);
         }
-        
+
         if(isTouching(Clue.class) && Greenfoot.isKeyDown("k"))
         {
             clue++;
@@ -160,51 +156,54 @@ public class GamerBrad extends Actor
             removeTouching(Clue.class);
             myWorld.getClues().setValue(clue);
         }
-        
+
         if(isTouching(KeySpecial.class) && Greenfoot.isKeyDown("u"))
         {
             keySpecial++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(KeySpecial.class);
+            myWorld.getKeysSpecials().setValue(keySpecial);
+            myWorld.showExits();
         }
-        
+
         if(isTouching(Cassette.class) && Greenfoot.isKeyDown("u"))
         {
             cassette++;
             Greenfoot.playSound("SM - Item.wav");
             removeTouching(Cassette.class);
+            myWorld.getCassettes().setValue(cassette);
+            playCassette();
         }
-        
+
         if(isTouching(Knife.class))
         {
             life--;
             removeTouching(Knife.class);
         }
     }
-    
-    /**
-     * This method check if a enemy is near of GamerBrad and if a enemy is touching him.
-     */
+
     private void checkEnemyNearby()
     {
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
-        
+
         if(isTouching(Saw.class) || isTouching(Esther.class) )
         {
             life--;
         }
-        
+
         if(isTouching(Ben.class))
         {
-            adrenalin--; //The fire that he trows will kill you;
+            adrenalin--; 
+            depletesBar();
         }
-        
+
         if(isTouching(Billy.class))
         {
             oxigen--;
+            depletesBar();
         }
-        
+
         if(isTouching(Nurse.class))
         {
             life--;
@@ -212,32 +211,143 @@ public class GamerBrad extends Actor
             actualTime=myWorld.getActualTime();
         }
     }
-    
-    /**
-     * This method return a int that represent the life of GamerBrad.
-     * @return a int that represent the life.
-     */
+
+    public void checkExit()
+    {
+        World mundo = getWorld();
+        Maze myWorld = (Maze)mundo;
+        if(isTouching(Exit.class) && Greenfoot.isKeyDown("e"))
+        {
+            removeTouching(Exit.class);
+            keySpecial=0;
+            myWorld.getKeysSpecials().setValue(keySpecial);
+            if(myWorld.getLetterMaze()==1)
+            {
+                myWorld.buildMaze(1);
+            }
+
+            if(myWorld.getLetterMaze()==2)
+            {
+                myWorld.buildMaze(2);
+            }
+
+            if(myWorld.getLetterMaze()==3)
+            {
+                myWorld.buildMaze(3);
+            }
+
+            if(myWorld.getLetterMaze()==4)
+            {
+                Screen winWorld = new Screen(3,this.getTotalTime());
+                Greenfoot.setWorld(winWorld);
+            }
+        }
+    }
+
+    private void removeDoor()
+    {
+        World mundo = getWorld();
+        Maze myWorld = (Maze)mundo;
+        if((keySpecial==3) && Greenfoot.isKeyDown("o"))
+        {
+            myWorld.removeObjects(myWorld.getObjects(Door.class));
+        }
+    }
+
     public int getLife()
     {
         return life;
     }
-    
-    /**
-     * This method return a int that represent the adrenalin of GamerBrad.
-     * @return a int that represent the adrenalin.
-     */
+
     public int getAdrenalin()
     {
         return adrenalin;
     }
-    
-    /**
-     * This method return a int that represent the oxigen of GamerBrad.
-     * @return a int that represent the oxigen.
-     */
+
     public int getOxigen()
     {
         return oxigen;
     }
-    
+
+    public int getKeySpecial()
+    {
+        return keySpecial;
+    }
+
+    private int getTotalTime()
+    {
+        World mundo = getWorld();
+        Maze myWorld = (Maze)mundo;
+        int totalTime = myWorld.getActualTime();
+        totalTime = totalTime - (key*3);
+        totalTime = totalTime - (clue*6);
+        return totalTime;
+    }
+
+    private void playCassette()
+    {
+        try {
+            if(cassette==1)
+            {
+                try {
+                    Greenfoot.playSound("SM-Maze-A.wav");
+                }
+
+                catch(IllegalArgumentException e)
+                {
+                    System.out.println("La cache");
+                }
+            }
+            else if (cassette==2)
+            {
+                try {
+                    Greenfoot.playSound("SM-Maze-B.wav");
+                }
+
+                catch(IllegalArgumentException e)
+                {
+                    System.out.println("La cache");
+                }
+            }
+            else if (cassette==3)
+            {
+                try {
+                    Greenfoot.playSound("SM-Maze-C.wav");
+                }
+
+                catch(IllegalArgumentException e)
+                {
+                    System.out.println("La cache");
+                }
+            }
+            else
+            {
+                try {
+                    Greenfoot.playSound("SM-Maze-D.wav");
+                }
+
+                catch(IllegalArgumentException e)
+                {
+                    System.out.println("La cache");
+                }
+            }
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+
+        }
+    }
+
+    private void depletesBar()
+    {   if(adrenalin<=0)
+        {   
+            adrenalin=0;
+            oxigen--;
+        }
+        if(oxigen<=0)
+        {   
+            oxigen=0;
+            life--;
+        }
+    }
 }

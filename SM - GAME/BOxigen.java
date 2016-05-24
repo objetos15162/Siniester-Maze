@@ -10,38 +10,37 @@ public class BOxigen extends Bar
 {
     /**
      * Act - do whatever the BOxigen wants to do. This method is called whenever
-     * This method set a image relationed with the oxigen of GamerBrad.
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
         World mundo = getWorld();
         Maze myWorld = (Maze)mundo;
-        
+
         if(myWorld.getBrad().getOxigen()==100)
         {
-           setImage("SM - BarOxigen100.png");
+            setImage("SM - BarOxigen100.png");
         }
-        
+
         if(myWorld.getBrad().getOxigen()==75)
         {
-           setImage("SM - BarOxigen75.png");
+            setImage("SM - BarOxigen75.png");
         }
-        
+
         if(myWorld.getBrad().getOxigen()==50)
         {
-           setImage("SM - BarOxigen50.png");
+            setImage("SM - BarOxigen50.png");
         }
-        
+
         if(myWorld.getBrad().getOxigen()==25)
         {
-           setImage("SM - BarOxigen25.png");
+            setImage("SM - BarOxigen25.png");
         }
-        
+
         if(myWorld.getBrad().getOxigen()==0)
         {
-            Screen lostWorld= new Screen(2);
-            Greenfoot.setWorld(lostWorld);
+            setImage("SM - BarOxigen0.png");
         }
     }    
 }

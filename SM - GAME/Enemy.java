@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Enemy extends Actor
 {
     private int moveAux;
-    
+
     /**
      * Act - do whatever the Enemy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,16 +19,13 @@ public class Enemy extends Actor
         // Add your action code here.
         moveEnemy();
     }    
-    
-    /**
-     * This metod makes a enemy move.
-     */
+
     private void moveEnemy()
     {
-        
+
         if(getOneIntersectingObject(Bloc.class)==null && getOneIntersectingObject(Bloc.class)==null)
         {
-            
+
             if(moveAux==0)
             {
                 move(-3);
@@ -49,7 +46,7 @@ public class Enemy extends Actor
         }
         else
         {
-            
+
             if(moveAux==0)
             {
                 move(3);
@@ -66,15 +63,12 @@ public class Enemy extends Actor
             {
                 move(-3);
             }
-            
+
             moveAux = Greenfoot.getRandomNumber(4);
-            
+
         }  
     }
-     
-    /**
-     * This method initialize a value random to set a direction random.
-     */
+
     public void setMoveAux(int value)
     {
         moveAux = value;

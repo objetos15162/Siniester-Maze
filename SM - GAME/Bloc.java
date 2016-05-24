@@ -10,7 +10,7 @@ public class Bloc extends Actor
 {
     /**
      * Act - do whatever the Bloc wants to do. This method is called whenever
-     * The method check if a Knife is touching the block and eliminate this Knife.
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
@@ -20,5 +20,5 @@ public class Bloc extends Actor
             removeTouching(Knife.class);
         }
     }    
-    
+
 }

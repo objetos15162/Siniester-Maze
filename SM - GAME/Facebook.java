@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Facebook extends Button
 {
     /**
-     *This method is a button to go to a Screen with the information of our Facebook account.
+     * Act - do whatever the Facebook wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
